@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title> Signal map for {{ page.addresse }}
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Loic Loewert">
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet"> 
+    <style>
+	html, body {
+	    height: 100%;
+	    margin: 0;
+	    padding: 0;
+	    }
+
+	   #map_canvas {
+	    height: 450px;
+	   }
+     body { padding-top: 60px;  /* 60px to make the container go all the way
+      to the bottom of the topbar */ } 
+    </style>
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+      </script>
+    <![endif]-->
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+	 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+	
+  </head>
+  
+  <body>
+    <div class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="index.html">
+            Serval Mesh Extender
+          </a>
+          <ul class="nav">
+            <li>
+              <a href="index.html">
+                Home
+              </a>
+            </li>
+            
+            <li>
+              <a href="mailto:loic.loewert@gmail.com">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="well">
+        <div>
+		<div class="row">
+			<div class="span6">
+			  <h1>
+			    {{page.addresse}}
+			  </h1>
+			</div>
+		<div class="span2">
+			<a class="btn btn-primary" onclick="show_low_signal=!show_low_signal; initialize(); toggleText();">
+				<span id="toggle_text">Hide</span> low signal points
+			</a>
+		</div>
+          </div>
+	<div id="map_canvas"></div>
+	<div id="legend"></div>
+        </div>
+      </div>
+
+
+
+      <hr>
+      <div>
+        Loic Loewert. Licence CC-BY.
+      </div>
+    </div>
+	{{ content }}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
+    </script>
+    <script src="assets/js/bootstrap.js">
+    </script>
+  </body>
+
+</html>
